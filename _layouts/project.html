@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<article class="project">
+
+  <header class="project-header">
+    <h1>{{ page.title }} <span class="year">({{ page.ano }})</span></h1>
+    <p class="project-meta">
+      {{ page.categoria }}
+      {% if page.tags %}
+        &middot;
+        {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      {% endif %}
+    </p>
+  </header>
+
+  {% if page.vimeo_id %}
+  <div class="video-embed">
+    <iframe src="https://player.vimeo.com/video/{{ page.vimeo_id }}?title=0&byline=0&portrait=0"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen>
+    </iframe>
+  </div>
+  {% endif %}
+
+  <div class="project-description">
+    {{ content }}
+  </div>
+
+  {% if page.ficha_tecnica %}
+  <div class="ficha-tecnica">
+    <h3>Ficha técnica</h3>
+    <p>{{ page.ficha_tecnica }}</p>
+  </div>
+  {% endif %}
+
+  {% if page.galeria %}
+  <div class="galeria-imagens">
+    {% for imagem in page.galeria %}
+      <img src="{{ imagem | relative_url }}" alt="{{ page.title }}">
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</article>

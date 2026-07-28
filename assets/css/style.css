@@ -1,0 +1,102 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  color: #191919;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.site-header nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* barra de filtros */
+.filters {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0 2rem 1.5rem;
+}
+
+.filter-btn {
+  border: 1px solid #191919;
+  background: transparent;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.filter-btn.active {
+  background: #191919;
+  color: #fff;
+}
+
+/* grade de miniaturas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 0 2rem 3rem;
+}
+
+.grid-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.grid-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.grid-item .year {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* pagina de projeto individual */
+.project {
+  padding: 0 2rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-embed {
+  position: relative;
+  padding-top: 56.25%; /* proporção 16:9 */
+  margin: 1.5rem 0;
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.tag {
+  font-size: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  margin-left: 0.3rem;
+}
+
+.galeria-imagens {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.galeria-imagens img { width: 100%; display: block; }

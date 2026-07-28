@@ -1,0 +1,20 @@
+title: Luiza Latorre
+description: Portfólio de vídeo-arte e design
+
+# Isso diz ao Jekyll: "tudo dentro da pasta _projects é uma collection
+# chamada 'projects', e cada arquivo vira uma página própria"
+collections:
+  projects:
+    output: true
+    permalink: /:slug/
+
+# Aplica automaticamente o layout "project" a todo item dessa collection,
+# sem precisar repetir isso em cada arquivo
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+markdown: kramdown
