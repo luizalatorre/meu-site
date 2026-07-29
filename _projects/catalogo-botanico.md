@@ -10,4 +10,4 @@ destaque: false
 
 Descrição do projeto de catálogo botânico — substitua por seu texto real.
 <br>
-<img src="/assets/img/ic-pixels-flower-colored-01.png">
+<img src="/meu-site/assets/img/ic-pixels-flower-colored-01.png">
