@@ -1,5 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
   const grid = document.getElementById("grid");
+  const headerFixed = document.getElementById("header-fixed");
+  const main = document.getElementById("main-content");
+
+  function ajustarEspacoDoTopo() {
+    if (headerFixed && main) {
+      main.style.paddingTop = headerFixed.offsetHeight + "px";
+    }
+  }
+
+  ajustarEspacoDoTopo();
+  window.addEventListener("resize", ajustarEspacoDoTopo);
 
   if (grid) {
     const itensArray = Array.from(grid.children);
@@ -16,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const itens = document.querySelectorAll(".grid-item");
   const toggleFiltros = document.getElementById("toggle-filtros");
   const painelTags = document.getElementById("filter-bar-tags");
+  const toggleSobre = document.getElementById("toggle-sobre");
+  const painelSobre = document.getElementById("sobre-panel");
 
   let categoriaAtiva = "todos";
   let tagsAtivas = new Set();
@@ -58,6 +71,15 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleFiltros.addEventListener("click", function () {
       painelTags.classList.toggle("aberto");
       toggleFiltros.classList.toggle("active");
+      ajustarEspacoDoTopo();
+    });
+  }
+
+  if (toggleSobre && painelSobre) {
+    toggleSobre.addEventListener("click", function () {
+      painelSobre.classList.toggle("aberto");
+      toggleSobre.classList.toggle("active");
+      ajustarEspacoDoTopo();
     });
   }
 });
