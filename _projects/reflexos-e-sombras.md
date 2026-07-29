@@ -5,7 +5,7 @@ ano: 2026
 categoria: "animacao"
 tags: ["stop-motion", "mestrado", "blender"]
 vimeo_id: "000000000"   # troque pelo ID real do vídeo no Vimeo
-capa: "/assets/img/reflexos-capa.jpg"
+capa: "/assets/img/ic-pixels-flower-colored-09.png"
 destaque: true
 ficha_tecnica: "Animação, direção e direção de arte: Luiza Couceiro Latorre. Trilha sonora: Thales Ariel. Orientação: Pelópidas Cypriano de Oliveira."
 ---
