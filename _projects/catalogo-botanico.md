@@ -9,3 +9,4 @@ destaque: false
 ---
 
 Descrição do projeto de catálogo botânico — substitua por seu texto real.
+<img src="/assets/img/ic-pixels-flower-colored-01.png">
