@@ -8,33 +8,43 @@
 </head>
 <body>
 
-  <header class="site-header">
-    <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
-    <nav>
-      <a href="{{ '/' | relative_url }}">Trabalhos</a>
-      <a href="{{ '/sobre/' | relative_url }}">Sobre</a>
-    </nav>
-  </header>
+  <div class="header-fixed" id="header-fixed">
+    <header class="site-header">
+      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+      <nav>
+        <a href="{{ '/' | relative_url }}">Trabalhos</a>
+        {% if page.url == "/" %}
+          <button id="toggle-sobre" class="nav-link-btn">Sobre</button>
+        {% else %}
+          <a href="{{ '/sobre/' | relative_url }}">Sobre</a>
+        {% endif %}
+      </nav>
+    </header>
 
-  {% if page.url == "/" %}
-  <div class="filter-bar-categorias">
-    <button class="filter-btn active" data-filter="todos">Todos</button>
-    {% assign categorias = site.projects | map: "categoria" | uniq %}
-    {% for cat in categorias %}
-      <button class="filter-btn" data-filter="{{ cat }}">{{ cat | capitalize }}</button>
-    {% endfor %}
-    <button id="toggle-filtros" class="toggle-filtros-btn">+ filtros</button>
+    {% if page.url == "/" %}
+    <div class="sobre-panel" id="sobre-panel">
+      {% include sobre-conteudo.html %}
+    </div>
+
+    <div class="filter-bar-categorias">
+      <button class="filter-btn active" data-filter="todos">Todos</button>
+      {% assign categorias = site.projects | map: "categoria" | uniq %}
+      {% for cat in categorias %}
+        <button class="filter-btn" data-filter="{{ cat }}">{{ cat | capitalize }}</button>
+      {% endfor %}
+      <button id="toggle-filtros" class="toggle-filtros-btn">+ filtros</button>
+    </div>
+
+    <div class="filter-bar-tags" id="filter-bar-tags">
+      {% assign todas_tags = site.projects | map: "tags" | flatten | uniq | sort %}
+      {% for tag in todas_tags %}
+        <button class="tag-btn" data-tag="{{ tag }}">{{ tag }}</button>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
 
-  <div class="filter-bar-tags" id="filter-bar-tags">
-    {% assign todas_tags = site.projects | map: "tags" | flatten | uniq | sort %}
-    {% for tag in todas_tags %}
-      <button class="tag-btn" data-tag="{{ tag }}">{{ tag }}</button>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  <main class="{% if page.url == '/' %}com-filtros{% endif %}">
+  <main id="main-content">
     {{ content }}
   </main>
 
