@@ -1,23 +1,44 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const botoes = document.querySelectorAll(".filter-btn");
+  const botoesCategoria = document.querySelectorAll(".filter-btn");
+  const botoesTag = document.querySelectorAll(".tag-btn");
   const itens = document.querySelectorAll(".grid-item");
 
-  if (!botoes.length) return;
+  let categoriaAtiva = "todos";
+  let tagsAtivas = new Set();
 
-  botoes.forEach(function (botao) {
+  function aplicarFiltro() {
+    itens.forEach(function (item) {
+      const categoria = item.dataset.categoria;
+      const tagsItem = item.dataset.tags ? item.dataset.tags.split(",") : [];
+
+      const passaCategoria = categoriaAtiva === "todos" || categoria === categoriaAtiva;
+      const passaTags = tagsAtivas.size === 0 ||
+        tagsItem.some(function (t) { return tagsAtivas.has(t); });
+
+      item.style.display = (passaCategoria && passaTags) ? "" : "none";
+    });
+  }
+
+  botoesCategoria.forEach(function (botao) {
     botao.addEventListener("click", function () {
-      const filtro = botao.dataset.filter;
-
-      // marca visualmente qual botão está ativo
-      botoes.forEach(function (b) { b.classList.remove("active"); });
+      categoriaAtiva = botao.dataset.filter;
+      botoesCategoria.forEach(function (b) { b.classList.remove("active"); });
       botao.classList.add("active");
+      aplicarFiltro();
+    });
+  });
 
-      // mostra/esconde cada item da grade
-      itens.forEach(function (item) {
-        const categoria = item.dataset.categoria;
-        const mostrar = filtro === "todos" || categoria === filtro;
-        item.style.display = mostrar ? "" : "none";
-      });
+  botoesTag.forEach(function (botao) {
+    botao.addEventListener("click", function () {
+      const tag = botao.dataset.tag;
+      if (tagsAtivas.has(tag)) {
+        tagsAtivas.delete(tag);
+        botao.classList.remove("active");
+      } else {
+        tagsAtivas.add(tag);
+        botao.classList.add("active");
+      }
+      aplicarFiltro();
     });
   });
 });

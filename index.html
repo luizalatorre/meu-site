@@ -11,12 +11,20 @@ title: Trabalhos
   {% endfor %}
 </section>
 
+<section class="filters filters-tags">
+  {% assign todas_tags = site.projects | map: "tags" | flatten | uniq | sort %}
+  {% for tag in todas_tags %}
+    <button class="tag-btn" data-tag="{{ tag }}">{{ tag }}</button>
+  {% endfor %}
+</section>
+
 <section class="grid" id="grid">
   {% assign projetos = site.projects | sort: "ano" | reverse %}
   {% for projeto in projetos %}
     <a href="{{ projeto.url | relative_url }}"
        class="grid-item"
-       data-categoria="{{ projeto.categoria }}">
+       data-categoria="{{ projeto.categoria }}"
+       data-tags="{{ projeto.tags | join: ',' }}">
       <img src="{{ projeto.capa | relative_url }}" alt="{{ projeto.title }}">
       <p>{{ projeto.title }} <span class="year">({{ projeto.ano }})</span></p>
     </a>

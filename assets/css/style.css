@@ -41,6 +41,27 @@ body {
   color: #fff;
 }
 
+.filters-tags {
+  padding-top: 0;
+  flex-wrap: wrap;
+}
+
+.tag-btn {
+  border: 1px solid #999;
+  background: transparent;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.tag-btn.active {
+  background: #555;
+  color: #fff;
+  border-color: #555;
+}
+
 /* grade de miniaturas */
 .grid {
   display: grid;
