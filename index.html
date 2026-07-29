@@ -3,24 +3,8 @@ layout: default
 title: Trabalhos
 ---
 
-<section class="filters">
-  <button class="filter-btn active" data-filter="todos">Todos</button>
-  {% assign categorias = site.projects | map: "categoria" | uniq %}
-  {% for cat in categorias %}
-    <button class="filter-btn" data-filter="{{ cat }}">{{ cat | capitalize }}</button>
-  {% endfor %}
-</section>
-
-<section class="filters filters-tags">
-  {% assign todas_tags = site.projects | map: "tags" | flatten | uniq | sort %}
-  {% for tag in todas_tags %}
-    <button class="tag-btn" data-tag="{{ tag }}">{{ tag }}</button>
-  {% endfor %}
-</section>
-
 <section class="grid" id="grid">
-  {% assign projetos = site.projects | sort: "ano" | reverse %}
-  {% for projeto in projetos %}
+  {% for projeto in site.projects %}
     <a href="{{ projeto.url | relative_url }}"
        class="grid-item"
        data-categoria="{{ projeto.categoria }}"

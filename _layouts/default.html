@@ -11,12 +11,30 @@
   <header class="site-header">
     <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
     <nav>
-      <a href="{{ '/sobre/' | relative_url }}">Sobre</a>
       <a href="{{ '/' | relative_url }}">Trabalhos</a>
+      <a href="{{ '/sobre/' | relative_url }}">Sobre</a>
     </nav>
   </header>
 
-  <main>
+  {% if page.url == "/" %}
+  <div class="filter-bar-categorias">
+    <button class="filter-btn active" data-filter="todos">Todos</button>
+    {% assign categorias = site.projects | map: "categoria" | uniq %}
+    {% for cat in categorias %}
+      <button class="filter-btn" data-filter="{{ cat }}">{{ cat | capitalize }}</button>
+    {% endfor %}
+    <button id="toggle-filtros" class="toggle-filtros-btn">+ filtros</button>
+  </div>
+
+  <div class="filter-bar-tags" id="filter-bar-tags">
+    {% assign todas_tags = site.projects | map: "tags" | flatten | uniq | sort %}
+    {% for tag in todas_tags %}
+      <button class="tag-btn" data-tag="{{ tag }}">{{ tag }}</button>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <main class="{% if page.url == '/' %}com-filtros{% endif %}">
     {{ content }}
   </main>
 
