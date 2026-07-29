@@ -2,10 +2,9 @@
 title: "Catálogo botânico"
 slug: "catalogo-botanico"
 ano: 2025
-categoria: "estaticos"
-tags: ["editorial", "ilustracao", "blender"]
-vimeo_id: "000000000"   # troque pelo ID real do vídeo no Vimeo
-capa: "/assets/img/ic-pixels-flower-colored-10.png"
+categoria: "Estáticos"
+tags: ["editorial", "ilustração", "blender"]
+capa: "/assets/img/capa-botanico.png"
 destaque: true
 ficha_tecnica: "Renders de modelos e combinações de vasos para paisagismo indoor organizados em um catálogo digital de vendas."
 ---
