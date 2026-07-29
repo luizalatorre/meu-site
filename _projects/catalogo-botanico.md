@@ -3,7 +3,8 @@ title: "Catálogo botânico"
 slug: "catalogo-botanico"
 ano: 2025
 categoria: "estaticos"
-tags: ["editorial", "ilustracao"]
+tags: ["editorial", "ilustracao", "blender"]
+vimeo_id: "000000000"   # troque pelo ID real do vídeo no Vimeo
 capa: "/assets/img/catalogo-capa.jpg"
 destaque: false
 ---
