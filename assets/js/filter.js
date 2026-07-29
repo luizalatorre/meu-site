@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const grid = document.getElementById("grid");
+
+  if (grid) {
+    const itensArray = Array.from(grid.children);
+
+    // embaralha o array (Fisher-Yates)
+    for (let i = itensArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [itensArray[i], itensArray[j]] = [itensArray[j], itensArray[i]];
+    }
+
+    // reinsere na nova ordem
+    itensArray.forEach(function (item) {
+      grid.appendChild(item);
+    });
+
+    grid.classList.add("pronta"); // só agora ela aparece
+  }
+
   const botoesCategoria = document.querySelectorAll(".filter-btn");
   const botoesTag = document.querySelectorAll(".tag-btn");
   const itens = document.querySelectorAll(".grid-item");
