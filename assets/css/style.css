@@ -159,7 +159,7 @@ body {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1px;                    /* espessura da linha entre os trabalhos */
+  gap: .5px;                    /* espessura da linha entre os trabalhos */
   background-color: #eee;      /* essa cor "vaza" pelo gap, virando a linha branca */
   margin: 0;
   padding: 0;
