@@ -204,5 +204,46 @@ document.addEventListener("DOMContentLoaded", function () {
       ajustarEspacoDoTopo();
     });
   }
+// --------------------------------------------------------
+  // COMPORTAMENTO NO CELULAR (touch)
+  //
+  // Em telas de toque não existe ":hover" de verdade — o dedo não
+  // "paira" sobre a imagem antes de tocar. Por isso, detectamos se
+  // o aparelho não tem hover disponível (matchMedia hover:none),
+  // e nesse caso mudamos o comportamento do toque:
+  //
+  // - 1º toque na capa: NÃO segue o link ainda. Em vez disso,
+  //   adiciona a classe "tocado" (que ativa o mesmo CSS do hover),
+  //   revelando as informações por cima da imagem.
+  // - 2º toque na MESMA capa: dessa vez o clique segue normal,
+  //   abrindo a página do projeto.
+  // - Tocar em outra capa: fecha o overlay da anterior e abre o
+  //   da nova (só uma capa "aberta" por vez).
+  // --------------------------------------------------------
+  const suportaHover = window.matchMedia("(hover: hover)").matches;
 
+  if (!suportaHover) {
+    const gridItems = document.querySelectorAll(".grid-item");
+
+    gridItems.forEach(function (item) {
+      item.addEventListener("click", function (evento) {
+        const jaEstaTocado = item.classList.contains("tocado");
+
+        if (!jaEstaTocado) {
+          // impede a navegação no primeiro toque
+          evento.preventDefault();
+
+          // fecha o overlay de qualquer outra capa que estivesse aberta
+          gridItems.forEach(function (outro) {
+            outro.classList.remove("tocado");
+          });
+
+          // abre o overlay dessa capa
+          item.classList.add("tocado");
+        }
+        // se já estava tocado, não faz nada aqui — o clique
+        // segue seu curso normal e o link abre o projeto
+      });
+    });
+  }
 });
