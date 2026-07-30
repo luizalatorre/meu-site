@@ -158,11 +158,11 @@ body {
    ============================================================ */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colunas de largura igual */
-  gap: 0px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;                    /* espessura da linha entre os trabalhos */
+  background-color: #eee;      /* essa cor "vaza" pelo gap, virando a linha branca */
   margin: 0;
   padding: 0;
-  border: 1px solid #eee;
 }
 
 .grid-item { text-decoration: none; color: inherit; }
