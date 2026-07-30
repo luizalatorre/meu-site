@@ -14,6 +14,7 @@
       <nav>
         {% if page.url == "/" %}
           <button id="toggle-sobre" class="nav-link-btn">Sobre</button>
+          <button id="fechar-sobre" class="nav-link-btn fechar-sobre-btn">(fechar)</button>
         {% else %}
           <a href="{{ '/sobre/' | relative_url }}">Sobre</a>
         {% endif %}

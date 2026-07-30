@@ -81,6 +81,18 @@ body {
   display: block;
 }
 
+/* o link "(fechar)" só aparece quando o painel Sobre está aberto —
+   por padrão fica escondido */
+.fechar-sobre-btn {
+  display: none;
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.fechar-sobre-btn.visivel {
+  display: inline;
+}
+
 /* ============================================================
    Linha 2: botões de categoria + botão "+ filtros"
    ============================================================ */
@@ -244,6 +256,27 @@ body {
   align-items: flex-end;
   gap: 0.4rem;
   padding: 1rem;
+}
+/* terceira coluna do overlay: texto "+ informações" rotacionado,
+   funcionando como indicação visual de que a capa é clicável */
+.overlay-mais-info-col {
+  border-left: 1px solid #191919;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem 0.35rem;
+}
+
+/* writing-mode: vertical-rl empilha o texto de cima pra baixo,
+   com cada caractere já rotacionado 90 graus. O rotate(180deg)
+   inverte a direção da leitura, pra ficar de baixo pra cima,
+   como no seu rascunho. */
+.overlay-mais-info-col span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 /* estilo das "pílulas" de categoria/tag dentro do overlay —

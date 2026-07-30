@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Referências dos elementos do painel "Sobre"
   const toggleSobre = document.getElementById("toggle-sobre");
   const painelSobre = document.getElementById("sobre-panel");
+  const fecharSobre = document.getElementById("fechar-sobre");
 
   // Guarda o estado atual do filtro: qual categoria está selecionada,
   // e quais tags estão marcadas (pode ter várias tags ao mesmo tempo,
@@ -197,10 +198,24 @@ document.addEventListener("DOMContentLoaded", function () {
   // mesmo princípio do "+ filtros" — abre/fecha o painel,
   // e recalcula o espaço no topo em seguida.
   // --------------------------------------------------------
+  // abre/fecha o painel Sobre a partir do botão "Sobre",
+  // e também mostra/esconde o link "(fechar)" em sincronia
   if (toggleSobre && painelSobre) {
     toggleSobre.addEventListener("click", function () {
       painelSobre.classList.toggle("aberto");
       toggleSobre.classList.toggle("active");
+      if (fecharSobre) fecharSobre.classList.toggle("visivel");
+      ajustarEspacoDoTopo();
+    });
+  }
+
+  // o link "(fechar)" sempre FECHA o painel, independente do estado
+  // (diferente do botão "Sobre", que alterna entre abrir e fechar)
+  if (fecharSobre && painelSobre) {
+    fecharSobre.addEventListener("click", function () {
+      painelSobre.classList.remove("aberto");
+      toggleSobre.classList.remove("active");
+      fecharSobre.classList.remove("visivel");
       ajustarEspacoDoTopo();
     });
   }

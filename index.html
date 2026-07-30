@@ -18,17 +18,20 @@ title: Trabalhos
           <span>{{ projeto.ano }}</span>
         </div>
         <div class="overlay-corpo">
-          <div class="overlay-categoria-col">
-            <span class="overlay-pill">{{ projeto.categoria | capitalize }}</span>
-          </div>
-          <div class="overlay-tags-col">
-            {% assign tags_limitadas = projeto.tags | slice: 0, 3 %}
-            {% for tag in tags_limitadas %}
-              <span class="overlay-pill">{{ tag }}</span>
-            {% endfor %}
-            <span class="overlay-pill">etc</span>
-          </div>
+        <div class="overlay-categoria-col">
+          <span class="overlay-pill">{{ projeto.categoria | capitalize }}</span>
         </div>
+        <div class="overlay-tags-col">
+          {% assign tags_limitadas = projeto.tags | slice: 0, 3 %}
+          {% for tag in tags_limitadas %}
+            <span class="overlay-pill">{{ tag }}</span>
+          {% endfor %}
+          <span class="overlay-pill">etc</span>
+        </div>
+        <div class="overlay-mais-info-col">
+          <span>+ informações</span>
+        </div>
+      </div>
       </div>
 
     </a>
