@@ -74,8 +74,15 @@ body {
   display: none;
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid #eee;
-  max-width: 640px; /* impede o texto de bio esticar a largura toda da tela */
+  /* limita a largura do TEXTO da bio (mais confortável de ler),
+   sem limitar o painel inteiro — assim a borda de baixo continua
+   esticando até o final da tela */
 }
+
+.sobre-conteudo-largura {
+  max-width: 640px;
+}
+
 
 .sobre-panel.aberto {
   display: block;

@@ -23,8 +23,10 @@
 
     {% if page.url == "/" %}
     <div class="sobre-panel" id="sobre-panel">
-      {% include sobre-conteudo.html %}
-    </div>
+  <div class="sobre-conteudo-largura">
+    {% include sobre-conteudo.html %}
+  </div>
+</div>
 
     <div class="filter-bar-categorias">
       <button class="filter-btn active" data-filter="todos">Todos</button>
