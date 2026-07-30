@@ -159,22 +159,8 @@ body {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: .5px;                    /* espessura da linha entre os trabalhos */
+  gap: 1px;                    /* espessura da linha entre os trabalhos */
   background-color: #eee;      /* essa cor "vaza" pelo gap, virando a linha branca */
-  margin: 0;
-  padding: 0;
-}
-
-/* ============================================================
-   GRADE DE TRABALHOS
-   2 colunas, largura total, sem margem externa, com linha
-   branca fina separando os itens (via gap + fundo branco).
-   ============================================================ */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2px;
-  background-color: #fff;
   margin: 0;
   padding: 0;
 }
@@ -200,7 +186,8 @@ body {
 }
 
 /* quando o mouse passa por cima do item, a imagem cai pra 30% de opacidade */
-.grid-item:hover img {
+.grid-item:hover img,
+.grid-item.tocado img {
   opacity: 0.3;
 }
 
@@ -214,7 +201,8 @@ body {
   color: #000;
 }
 
-.grid-item:hover .overlay-info {
+.grid-item:hover .overlay-info,
+.grid-item.tocado .overlay-info {
   display: flex;
 }
 
