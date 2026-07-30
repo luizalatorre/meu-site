@@ -125,7 +125,7 @@ body {
 .filter-btn,
 .tag-btn,
 .toggle-filtros-btn {
-  border: 1px solid #191919;
+  border: 1px solid #462e19;
   background: transparent;
   padding: 0.35rem 0.9rem;
   border-radius: 999px; /* deixa o botão arredondado, formato "pílula" */
@@ -140,8 +140,8 @@ body {
 .filter-btn.active,
 .tag-btn.active,
 .toggle-filtros-btn.active {
-  background: #191919;
-  color: #fff;
+  background: #462e19;
+  color: #eee;
 }
 
 /* empurra o botão "+ filtros" pro canto direito da linha,
@@ -198,7 +198,7 @@ body {
   inset: 0;
   display: none;
   flex-direction: column;
-  color: #000;
+  color: #462e19;
 }
 
 .grid-item:hover .overlay-info,
@@ -211,7 +211,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #191919;
+  border-bottom: 1px solid #462e19;
   background-color: #eee;
   font-size: 0.85rem;
 }
@@ -250,7 +250,7 @@ body {
    mesmo visual dos botões de filtro, mas sem fundo, já que aqui
    é só informação, não é clicável */
 .overlay-pill {
-  border: 1px solid #191919;
+  border: 1px solid #462e19;
   background-color: #eee;
   border-radius: 999px;
   padding: 0.2rem 0.7rem;
