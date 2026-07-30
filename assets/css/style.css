@@ -291,3 +291,13 @@ body {
   margin-top: 2rem;
 }
 .galeria-imagens img { width: 100%; display: block; }
+
+/* Em telas estreitas (celular), a grade passa de 2 pra 1 coluna.
+   768px é uma quebra comum pra "tablet/celular", mas pode ajustar
+   esse número se quiser trocar em outro tamanho de tela. */
+
+   @media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
