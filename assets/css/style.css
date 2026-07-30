@@ -165,17 +165,108 @@ body {
   padding: 0;
 }
 
-.grid-item { text-decoration: none; color: inherit; }
+/* ============================================================
+   GRADE DE TRABALHOS
+   2 colunas, largura total, sem margem externa, com linha
+   branca fina separando os itens (via gap + fundo branco).
+   ============================================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
 
-/* aspect-ratio força todas as capas a terem a mesma proporção
-   (4 de largura por 3 de altura), mesmo que as imagens originais
-   tenham tamanhos diferentes — mantém a grade visualmente alinhada.
-   object-fit: cover corta a imagem pra preencher esse espaço sem
-   distorcer (em vez de esticar/espremer). */
-.grid-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+/* "position: relative" é necessário aqui porque o overlay-info
+   (o painel de informações) usa "position: absolute" — e um
+   elemento absoluto sempre se posiciona em relação ao ancestral
+   mais próximo que tenha "position" definido. Sem isso, o overlay
+   se posicionaria em relação à página inteira, não à imagem. */
+.grid-item {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
 
-.grid-item p { margin: 0.4rem 0.6rem; font-size: 0.85rem; }
-.grid-item .year { color: #888; } /* ano em cinza, mais discreto que o título */
+.grid-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.25s ease; /* deixa o escurecimento suave, não instantâneo */
+}
+
+/* quando o mouse passa por cima do item, a imagem cai pra 30% de opacidade */
+.grid-item:hover img {
+  opacity: 0.3;
+}
+
+/* painel de informações: cobre a imagem inteira (inset: 0 = 
+   top/right/bottom/left todos zero), mas fica invisível até o hover */
+.overlay-info {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  color: #000;
+}
+
+.grid-item:hover .overlay-info {
+  display: flex;
+}
+
+/* linha 1 do overlay: nome do trabalho + ano, com linha divisória embaixo */
+.overlay-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #191919;
+  font-size: 0.85rem;
+}
+
+/* área abaixo do cabeçalho: dividida em 2 colunas lado a lado
+   (categoria à esquerda, tags à direita) */
+.overlay-corpo {
+  flex: 1;
+  display: flex;
+}
+
+/* coluna da categoria: ocupa o espaço restante à esquerda,
+   e "align-items: flex-end" empurra o conteúdo pro fundo
+   (já que o eixo cruzado de um flex "row" é o vertical) */
+.overlay-categoria-col {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+/* coluna das tags: linha vertical separando das categorias,
+   empilhadas de baixo pra cima (justify-content: flex-end em
+   coluna) e alinhadas à direita (align-items: flex-end) */
+.overlay-tags-col {
+  border-left: 1px solid #191919;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 0.4rem;
+  padding: 1rem;
+}
+
+/* estilo das "pílulas" de categoria/tag dentro do overlay —
+   mesmo visual dos botões de filtro, mas sem fundo, já que aqui
+   é só informação, não é clicável */
+.overlay-pill {
+  border: 1px solid #191919;
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
 
 /* ============================================================
    PÁGINA DE PROJETO INDIVIDUAL
