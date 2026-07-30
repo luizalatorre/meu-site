@@ -212,6 +212,7 @@ body {
   justify-content: space-between;
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #191919;
+  background-color: #eee;
   font-size: 0.85rem;
 }
 
@@ -236,7 +237,7 @@ body {
    empilhadas de baixo pra cima (justify-content: flex-end em
    coluna) e alinhadas à direita (align-items: flex-end) */
 .overlay-tags-col {
-  border-left: 1px solid #191919;
+  border-left: 1px solid #eee;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -250,6 +251,7 @@ body {
    é só informação, não é clicável */
 .overlay-pill {
   border: 1px solid #191919;
+  background-color: #eee;
   border-radius: 999px;
   padding: 0.2rem 0.7rem;
   font-size: 0.75rem;
