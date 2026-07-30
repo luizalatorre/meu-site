@@ -72,7 +72,7 @@ body {
    ============================================================ */
 .sobre-panel {
   display: none;
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 0.5rem;
   border-bottom: 1px solid #eee;
   max-width: 640px; /* impede o texto de bio esticar a largura toda da tela */
 }
@@ -85,8 +85,7 @@ body {
    por padrão fica escondido */
 .fechar-sobre-btn {
   display: none;
-  color: #888;
-  font-size: 0.8rem;
+  color: #462e19
 }
 
 .fechar-sobre-btn.visivel {
