@@ -103,6 +103,35 @@ document.addEventListener("DOMContentLoaded", function () {
   let categoriaAtiva = "todos";
   let tagsAtivas = new Set();
 
+  // --------------------------------------------------------
+  // LER FILTROS A PARTIR DA URL
+  //
+  // Permite compartilhar um link que já chega com um filtro
+  // ativado, por exemplo:
+  //   ?categoria=animacao
+  //   ?tags=blender
+  //   ?categoria=animacao&tags=blender,mestrado
+  //
+  // "URLSearchParams" lê o que vem depois do "?" na URL.
+  // Se o parâmetro existir, usamos ele pra já iniciar o filtro
+  // no estado certo, antes mesmo do visitante clicar em qualquer
+  // botão.
+  // --------------------------------------------------------
+  const parametrosURL = new URLSearchParams(window.location.search);
+  const categoriaDaURL = parametrosURL.get("categoria");
+  const tagsDaURL = parametrosURL.get("tags");
+
+  if (categoriaDaURL) {
+    categoriaAtiva = categoriaDaURL;
+  }
+
+  if (tagsDaURL) {
+    // separa "blender,mestrado" em ["blender", "mestrado"]
+    tagsDaURL.split(",").forEach(function (tag) {
+      tagsAtivas.add(tag.trim());
+    });
+  }
+
 
   // --------------------------------------------------------
   // FUNÇÃO: aplicarFiltro
@@ -134,6 +163,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+// --------------------------------------------------------
+  // Se a URL já trouxe algum filtro, aplica visualmente:
+  // marca os botões certos como "active" e já mostra a grade
+  // filtrada, sem precisar de nenhum clique do visitante.
+  // --------------------------------------------------------
+  if (categoriaDaURL || tagsDaURL) {
+    botoesCategoria.forEach(function (botao) {
+      botao.classList.toggle("active", botao.dataset.filter === categoriaAtiva);
+    });
+
+    botoesTag.forEach(function (botao) {
+      if (tagsAtivas.has(botao.dataset.tag)) {
+        botao.classList.add("active");
+      }
+    });
+
+    // se veio filtro de tag, já abre o painel de tags visível,
+    // pra ficar claro pro visitante o que está sendo filtrado
+    if (tagsDaURL && painelTags && toggleFiltros) {
+      painelTags.classList.add("aberto");
+      toggleFiltros.classList.add("active");
+    }
+
+    aplicarFiltro();
+  }
 
   // --------------------------------------------------------
   // Clique em um botão de CATEGORIA:
