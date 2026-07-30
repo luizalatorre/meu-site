@@ -1,73 +1,111 @@
+/* reseta o box-model padrão do navegador: padding e border passam a
+   contar DENTRO da largura/altura definida, em vez de somar por fora.
+   Evita surpresas de tamanho ao longo do site inteiro. */
 * { box-sizing: border-box; }
 
 body {
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-  margin: 0;
-  color: #191919;
-  background-color: #f4cdcd;
+  margin: 0; /* remove a margem padrão do navegador ao redor da página */
+  color: #462e19;
+  background-color: #cadeeb; /* cor de fundo do site */
 }
 
+/* ============================================================
+   CABEÇALHO FIXO
+   Esse é o "container" que empilha as 3 (ou 4, com o Sobre) linhas
+   do topo: título/nav, painel Sobre, categorias, painel de tags.
+   "position: fixed" faz ele flutuar por cima do resto da página,
+   sempre visível mesmo quando o visitante rola pra baixo.
+   "flex-direction: column" empilha as linhas de cima pra baixo,
+   uma embaixo da outra, cada uma com sua altura natural.
+   ============================================================ */
 .header-fixed {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: #fff;
+  z-index: 100; /* garante que fique por cima de tudo, inclusive da grade */
+  background: #cadeeb;
   display: flex;
   flex-direction: column;
 }
 
+/* Linha 1: título do site + links de navegação (Trabalhos/Sobre) */
 .site-header {
-  height: 56px;
+  height: 56px; /* altura fixa dessa linha específica */
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center; /* centraliza verticalmente título e nav */
+  justify-content: space-between; /* título na esquerda, nav na direita */
   padding: 0 1.5rem;
-  border-bottom: 1px solid #eee;
-  flex-shrink: 0;
+  border-bottom: 1px solid #eee; /* linha fina separando da próxima seção */
+  flex-shrink: 0; /* impede essa linha de "encolher" quando o conteúdo cresce */
 }
 
+/* estilo dos links de texto (Trabalhos, Sobre quando é link normal) */
 .site-header nav a,
 .nav-link-btn {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  color: inherit;
+  margin-left: 1.5rem; /* espaço entre os links */
+  text-decoration: none; /* remove sublinhado padrão de link */
+  color: inherit; /* usa a cor do texto ao redor, não o azul padrão de link */
 }
 
+/* Na home, "Sobre" é um <button> (pra poder abrir o painel via JS),
+   não um <a>. Esse trecho remove a aparência padrão de botão do
+   navegador, pra ele parecer um link de texto comum. */
 .nav-link-btn {
   background: none;
   border: none;
-  font: inherit;
+  font: inherit; /* usa a mesma fonte do resto do site, não a fonte padrão de botão */
   cursor: pointer;
   padding: 0;
 }
 
+/* Quando o painel Sobre está aberto, sublinha o botão "Sobre"
+   pra indicar visualmente que ele está "ativo"/selecionado */
 .nav-link-btn.active {
   text-decoration: underline;
 }
 
+/* ============================================================
+   PAINEL "SOBRE"
+   Fica escondido por padrão (display: none). O JS adiciona a
+   classe "aberto" quando o botão Sobre é clicado, e é essa classe
+   que efetivamente faz ele aparecer.
+   ============================================================ */
 .sobre-panel {
   display: none;
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid #eee;
-  max-width: 640px;
+  max-width: 640px; /* impede o texto de bio esticar a largura toda da tela */
 }
 
 .sobre-panel.aberto {
   display: block;
 }
 
+/* ============================================================
+   Linha 2: botões de categoria + botão "+ filtros"
+   ============================================================ */
 .filter-bar-categorias {
   height: 48px;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.6rem; /* espaço entre os botões */
   padding: 0 1.5rem;
-  overflow-x: auto;
-  white-space: nowrap;
+  overflow-x: auto; /* se tiver muitos botões, permite rolar horizontalmente
+                        em vez de quebrar linha ou estourar a tela */
+  white-space: nowrap; /* impede o texto dos botões de quebrar em duas linhas */
   border-bottom: 1px solid #eee;
   flex-shrink: 0;
 }
 
+/* ============================================================
+   PAINEL DE TAGS (linha 3)
+   Mesmo princípio do painel Sobre: escondido por padrão,
+   e a classe "aberto" (adicionada via JS) faz ele aparecer.
+   "flex-wrap: wrap" permite que os botões de tag quebrem em
+   várias linhas se não couberem todos na largura da tela —
+   por isso essa linha não tem altura fixa, ela cresce conforme
+   a quantidade de tags.
+   ============================================================ */
 .filter-bar-tags {
   display: none;
   flex-wrap: wrap;
@@ -80,18 +118,25 @@ body {
   display: flex;
 }
 
+/* ============================================================
+   Estilo compartilhado pelos três tipos de botão de filtro
+   (categoria, tag, e o "+ filtros"), já que visualmente são iguais
+   ============================================================ */
 .filter-btn,
 .tag-btn,
 .toggle-filtros-btn {
   border: 1px solid #191919;
   background: transparent;
   padding: 0.35rem 0.9rem;
-  border-radius: 999px;
+  border-radius: 999px; /* deixa o botão arredondado, formato "pílula" */
   cursor: pointer;
   font-size: 0.8rem;
-  flex-shrink: 0;
+  flex-shrink: 0; /* impede o botão de espremer/encolher dentro do flex */
 }
 
+/* Estado "selecionado" — a classe "active" é adicionada/removida
+   via JS quando o botão é clicado, invertendo as cores (fundo escuro,
+   texto branco) pra indicar visualmente o que está ativo */
 .filter-btn.active,
 .tag-btn.active,
 .toggle-filtros-btn.active {
@@ -99,32 +144,56 @@ body {
   color: #fff;
 }
 
+/* empurra o botão "+ filtros" pro canto direito da linha,
+   deixando as categorias agrupadas à esquerda */
 .toggle-filtros-btn {
   margin-left: auto;
 }
 
+/* ============================================================
+   GRADE DE TRABALHOS
+   2 colunas, ocupando a largura inteira da tela, sem margem
+   externa (margin/padding: 0) e com um espaçamento fino entre
+   os itens (gap: 4px) — a "margem interna fina" que você pediu.
+   ============================================================ */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4px;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas de largura igual */
+  gap: 0px;
   margin: 0;
   padding: 0;
+  border: 1px solid #eee;
 }
 
 .grid-item { text-decoration: none; color: inherit; }
-.grid-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
-.grid-item p { margin: 0.4rem 0.6rem; font-size: 0.85rem; }
-.grid-item .year { color: #888; }
 
+/* aspect-ratio força todas as capas a terem a mesma proporção
+   (4 de largura por 3 de altura), mesmo que as imagens originais
+   tenham tamanhos diferentes — mantém a grade visualmente alinhada.
+   object-fit: cover corta a imagem pra preencher esse espaço sem
+   distorcer (em vez de esticar/espremer). */
+.grid-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+
+.grid-item p { margin: 0.4rem 0.6rem; font-size: 0.85rem; }
+.grid-item .year { color: #888; } /* ano em cinza, mais discreto que o título */
+
+/* ============================================================
+   PÁGINA DE PROJETO INDIVIDUAL
+   ============================================================ */
 .project {
   padding: 2rem 1.5rem 4rem;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 900px; /* limita a largura pra o texto não ficar difícil de ler */
+  margin: 0 auto; /* centraliza o bloco na página */
 }
 
+/* técnica padrão pra manter um player de vídeo sempre na proporção
+   16:9, mesmo quando a largura da tela muda (responsivo).
+   O "padding-top: 56.25%" é o cálculo de 9/16 em porcentagem. */
 .video-embed { position: relative; padding-top: 56.25%; margin: 1.5rem 0; }
 .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
+/* tag exibida dentro do texto da página de projeto (não confundir
+   com .tag-btn, que é o botão clicável do filtro) */
 .tag {
   font-size: 0.75rem;
   border: 1px solid #ccc;
@@ -133,6 +202,9 @@ body {
   margin-left: 0.3rem;
 }
 
+/* grade de imagens/stills dentro da página de projeto (diferente
+   da grade da home — aqui o número de colunas se ajusta sozinho
+   dependendo de quantas imagens couberem, em vez de ser fixo em 2) */
 .galeria-imagens {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
