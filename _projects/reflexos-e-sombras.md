@@ -3,9 +3,9 @@ title: "Reflexos e sombras"
 slug: "reflexos-e-sombras"
 ano: 2026
 categoria: "Animação"
-tags: ["stop-motion", "mestrado", "blender"]
-vimeo_id: "000000000"   # troque pelo ID real do vídeo no Vimeo
-capa: "/assets/img/capa-reflexos.jpg"
+tags: ["stop-motion", "mestrado", "blender", "autoral"]
+vimeo_id: "1220950424"   # troque pelo ID real do vídeo no Vimeo
+capa: "/assets/img/capa-reflexos.jpgs"
 destaque: true
 ficha_tecnica: "Animação, direção e direção de arte: Luiza Couceiro Latorre. Trilha sonora: Thales Ariel. Orientação: Pelópidas Cypriano de Oliveira."
 ---
