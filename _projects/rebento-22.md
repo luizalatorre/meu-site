@@ -4,7 +4,7 @@ slug: "nuvens"
 ano: 2026
 categoria: "Estáticos"
 tags: ["diagramação", "indesign", "texto", "editoração", "acadêmico"]
-capa: "/assets/img/rebento-22-capa.jpg"
+capa: "/assets/img/REBENTO-22-capa.jpg"
 destaque: true
 ficha_tecnica: "..."
 ---
