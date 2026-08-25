@@ -307,6 +307,19 @@ body {
   margin: 0 auto; /* centraliza o bloco na página */
 }
 
+/* limita qualquer imagem dentro do texto da descrição (ex: as que
+   você insere via <img> no corpo do .md) à largura do container
+   .project — a mesma largura que o player do Vimeo já ocupa.
+   "height: auto" mantém a proporção original da imagem, sem
+   esticar ou distorcer. "display: block" remove um espacinho
+   extra que imagens costumam ter por padrão abaixo delas. */
+.project-description img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+}
+
 /* técnica padrão pra manter um player de vídeo sempre na proporção
    16:9, mesmo quando a largura da tela muda (responsivo).
    O "padding-top: 56.25%" é o cálculo de 9/16 em porcentagem. */
