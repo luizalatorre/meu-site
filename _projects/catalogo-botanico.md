@@ -9,4 +9,4 @@ destaque: true
 ficha_tecnica: "Renders de modelos e combinações de vasos para paisagismo indoor organizados em um catálogo digital de vendas."
 ---
 
-<img src="/meu-site/assets/img/mockup-bioma">
+<img src="/meu-site/assets/img/mockup-bioma.jpg">
