@@ -1,6 +1,6 @@
 ---
 title: "Rebento 22: História contra-hegemônica e memória das artes da cena: Experimentações e resistências artístico pedagógicas"
-slug: "nuvens"
+slug: "rebento-22"
 ano: 2026
 categoria: "Estáticos"
 tags: ["diagramação", "indesign", "texto", "editorial", "acadêmico"]
