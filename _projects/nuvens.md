@@ -3,7 +3,7 @@ title: "Nuvens"
 slug: "nuvens"
 ano: 2026
 categoria: "Animação"
-tags: ["vetorial", "mestrado", "after effects", "giz pastel", "autoral"]
+tags: ["vetorial", "mestrado", "after effects", "giz pastel", "autoral", "2d"]
 vimeo_id: "1213777456"   # troque pelo ID real do vídeo no Vimeo
 capa: "/assets/img/capa-nuvens.png"
 destaque: true
