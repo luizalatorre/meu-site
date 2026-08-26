@@ -8,7 +8,7 @@ capa: "/assets/img/REBENTO-20-capa.jpg"
 destaque: true
 
 ---
-<img src="{{ '/assets/img/mockup-rebento-21.jpg' | relative_url }}"> <br>
+<img src="{{ '/assets/img/mockup-rebento-20.jpg' | relative_url }}"> <br>
 Revista Rebento – v. 1 n. 20 (2025): Obs-cena: investigações sobre o que mal cabe no olhar. <br><br>
 
 
