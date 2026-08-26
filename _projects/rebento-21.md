@@ -8,7 +8,7 @@ capa: "/assets/img/REBENTO-21-capa.jpg"
 destaque: true
 
 ---
-<img src="{{ '/assets/img/mockup-rebento-22.jpg' | relative_url }}"> <br><br>
+<img src="{{ '/assets/img/mockup-rebento-21.jpg' | relative_url }}"> <br><br>
 “v. 1 n. 21 (2025): Heranças e Resistências Anti-coloniais: propostas e percalços em torno do ensino e da pesquisa em e com as artes.” <br><br>
 
 
