@@ -8,7 +8,7 @@ capa: "/assets/img/REBENTO-22-capa.jpg"
 destaque: true
 
 ---
-<img src="{{ '/assets/img/mockup-rebento-22.jpg' | relative_url }}"> <br><br>
+<img src="{{ '/assets/img/mockup-rebento-22.jpg' | relative_url }}"> <br>
 “v. 1 n. 22 (2026): História contra-hegemônica e memória das artes da cena: Experimentações e resistências artístico-pedagógicas” <br><br>
 
 
