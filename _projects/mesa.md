@@ -12,5 +12,5 @@ ficha_tecnica: "Título Original: Qualquer coisa pode ser uma mesa / Uma mesa po
 
 Animação em técnica mista realizada durante processo de pesquisa em meu projeto de Mestrado, no Instituto de Artes da  Universidade Estadual Paulista "Júlio de Mesquita Filho" (UNESP). O vídeo que explora as possibilidades de criação em animação no ambiente universitário foi projetado durante a exposição "Pesquisa aberta", que ocorreu em outubro de 2025, no espaço da Galeria Guignard, em Belo Horizonte.
 <br>
-<img src="{{ '/assets/img/guignard.jpg' | relative_url }}"> <br>
+<img src="{{ '/assets/img/guignard.jpg' | relative_url }}"> 
 <a href="https://www.instagram.com/p/DN8ZEYojDYd/">Um pouco mais sobre a exposição</a>
