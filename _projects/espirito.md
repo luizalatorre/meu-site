@@ -3,7 +3,7 @@ title: "Espírito que sopra"
 slug: "espirito"
 ano: 2021
 categoria: "Animação"
-tags: ["vetorial", "after effects", "autoral", "2d", "character design", "cenário"]
+tags: ["vetorial", "after effects", "autoral", "2d", "character design", "cenário", "ilustração"]
 vimeo_id: "1221928870"   # troque pelo ID real do vídeo no Vimeo
 capa: "/assets/img/capa-espirito.png"
 destaque: true
