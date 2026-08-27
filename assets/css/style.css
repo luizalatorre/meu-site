@@ -356,3 +356,40 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   BARRA FIXA INFERIOR
+   Idioma à esquerda, links (Instagram/Email) à direita —
+   "justify-content: space-between" empurra os dois grupos
+   pras pontas opostas automaticamente.
+   ============================================================ */
+.footer-fixed {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background: #fff;
+  border-top: 1px solid #eee;
+  z-index: 100;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.85rem;
+}
+
+/* reserva espaço no final da página pra o conteúdo não ficar
+   escondido atrás dessa barra fixa (mesma lógica do cabeçalho,
+   só que aplicada embaixo) */
+#main-content {
+  padding-bottom: 48px;
+}
