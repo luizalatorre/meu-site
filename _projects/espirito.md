@@ -10,4 +10,4 @@ destaque: true
 ficha_tecnica: "Animação e direção: Luiza Couceiro Latorre."
 ---
 
-Animação vetorial produzida na articulação entre os softwares Adobe Illustrator e Adobe After Effects. é uma animação sobre uma criatura fantástica que percorre uma paisagem noturna, entre montanhas, nuvens e pequenas casas. O personagem místico referencia os ventos foi desenvolvido a partir da customização de uma onda senoidal, seu movimento fluido estabelece um diálogo entre as forças orgânicas e geométricas. 
+Animação vetorial produzida na articulação entre os softwares Adobe Illustrator e Adobe After Effects. <i>Espírito que sopra</i> é uma animação que retrata uma criatura fantástica percorrendo uma paisagem noturna, entre montanhas, nuvens e casinhas. Este personagem místico referencia os ventos e foi desenvolvido a partir da customização de uma onda senoidal -- seu movimento fluido estabelece um diálogo entre as forças orgânicas e geométricas. 
