@@ -393,3 +393,9 @@ body {
 #main-content {
   padding-bottom: 48px;
 }
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #888;
+}
