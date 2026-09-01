@@ -9,4 +9,4 @@ destaque: true
 ficha_tecnica: "Composição e modelagem 3D de proposta expositiva da obra do artista Bruno Cançado em parceria com a Central Galeria."
 ---
 
-<img src="/meu-site/assets/img/capa-central.jpg">
+<img src="{{ '/assets/img/capa-central.jpg' | relative_url }}">
