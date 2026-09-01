@@ -1,0 +1,12 @@
+---
+title: "Bruno Cançado + Galeria Central"
+slug: "bruno-cancado"
+ano: 2025
+categoria: "Estáticos"
+tags: ["editorial", "ilustração", "blender", "indesign", "3d"]
+capa: "/assets/img/capa-central.jpg"
+destaque: true
+ficha_tecnica: "Composição e modelagem 3D de proposta expositiva da obra do artista Bruno Cançado em parceria com a Central Galeria."
+---
+
+<img src="/meu-site/assets/img/capa-central.jpg">
