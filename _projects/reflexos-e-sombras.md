@@ -3,7 +3,7 @@ title: "Reflexos e sombras"
 slug: "reflexos-e-sombras"
 ano: 2026
 categoria: "Animação"
-tags: ["stop motion", "mestrado", "blender", "autoral", "2d", "rigging", "mixed media", "cenários"]
+tags: ["stop motion", "mestrado", "blender", "autoral", "2d", "rigging", "mixed media", "cenários", "vegetal"]
 vimeo_id: "1220950424"   # troque pelo ID real do vídeo no Vimeo
 capa: "/assets/img/capa-reflexos.jpg"
 destaque: true
