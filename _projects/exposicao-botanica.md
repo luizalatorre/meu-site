@@ -9,3 +9,4 @@ destaque: true
 ficha_tecnica: " Composição e modelagem 3D de proposta expositiva em parceria com Bioma Botânica."
 ---
 
+<img src="{{ '/assets/img/capa-expobotanica.jpg' | relative_url }}"> 
