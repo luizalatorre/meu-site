@@ -1,3 +1,4 @@
+---
 title: "Sofia Central + Galeria Central"
 slug: "sofia-borges"
 ano: 2026
