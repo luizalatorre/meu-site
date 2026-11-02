@@ -8,3 +8,5 @@ capa: "/assets/img/foto-2.jpg"
 destaque: true
 ficha_tecnica: "Reflexos e sombras no Inhotim. Fotografia sobre sulfite com colagem de ornamentos de lantejoula."
 ---
+
+<img src="{{ '/assets/img/foto-2.jpg' | relative_url }}"> 

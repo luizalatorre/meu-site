@@ -8,3 +8,5 @@ capa: "/assets/img/aquario-2.jpg"
 destaque: true
 ficha_tecnica: "Memórias do Rio Negro. Aquário de café com cascalhos."
 ---
+
+<img src="{{ '/assets/img/aquario-2.jpg' | relative_url }}"> 

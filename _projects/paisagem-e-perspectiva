@@ -8,3 +8,5 @@ capa: "/assets/img/pintura.jpg"
 destaque: true
 ficha_tecnica: "Paisagem e perspectiva. Acrílica sobre tecido, com aplicação de fuxico."
 ---
+
+<img src="{{ '/assets/img/pintura.jpg' | relative_url }}"> 

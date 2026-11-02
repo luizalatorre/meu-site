@@ -8,3 +8,5 @@ capa: "/assets/img/peixes.jpg"
 destaque: true
 ficha_tecnica: "Pesca. Retalhos de tecido presos em estrutura de arame."
 ---
+
+<img src="{{ '/assets/img/peixes.jpg' | relative_url }}"> 
