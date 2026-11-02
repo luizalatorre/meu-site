@@ -1,5 +1,5 @@
 ---
-title: "Sofia Central + Galeria Central"
+title: "Sofia Borges + Galeria Central"
 slug: "sofia-borges"
 ano: 2026
 categoria: "Estáticos"
