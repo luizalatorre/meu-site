@@ -3,7 +3,7 @@ title: "Ruído Vermelho"
 slug: "ruído-vermelho"
 ano: 2025
 categoria: "Animação"
-tags: ["after effects", "autoral", "2d", "mixed media", "stop motion", "serigrafia"]
+tags: ["after effects", "autoral", "2d", "mixed media", "stop motion", "serigrafia", "autoral - Arte", "crítica"]
 vimeo_id: "1221327618"   # troque pelo ID real do vídeo no Vimeo
 capa: "/assets/img/capa-ruido-vermelho.png"
 destaque: true

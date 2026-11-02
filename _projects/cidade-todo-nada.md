@@ -3,7 +3,7 @@ title: "Cidade Todo-nada"
 slug: "cidade-todo-nada"
 ano: 2022
 categoria: "Animação"
-tags: ["vetorial", "graduação", "after effects", "autoral", "acadêmico", "2d", "cenários"]
+tags: ["vetorial", "graduação", "after effects", "autoral", "acadêmico", "2d", "cenários", "autoral - Arte", "urbano", "visual geométrico"]
 vimeo_id: "1221283631"   # troque pelo ID real do vídeo no Vimeo
 capa: "/assets/img/capa-cidade.png"
 destaque: true

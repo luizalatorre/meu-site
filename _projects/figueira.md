@@ -3,7 +3,7 @@ title: "Detalhe de paisagem vegetal"
 slug: "figueira"
 ano: 2023
 categoria: "Estáticos"
-tags: ["pintura", "ilustração", "aquarela", "autoral"]
+tags: ["pintura", "ilustração", "aquarela", "autoral", "autoral - Arte"]
 capa: "/assets/img/capa-figueira.jpg"
 destaque: true
 ficha_tecnica: "Gatos abraçados. Aquarela sobre papel."

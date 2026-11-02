@@ -3,7 +3,7 @@ title: "Qualquer coisa pode ser uma mesa / Uma mesa pode ser qualquer coisa"
 slug: "mesa"
 ano: 2025
 categoria: "Animação"
-tags: ["vetorial", "mestrado", "after effects", "autoral", "2d", "mixed media", "stop motion"]
+tags: ["vetorial", "mestrado", "after effects", "autoral", "2d", "mixed media", "stop motion", "autoral - Arte", "síntese de pesquisa"]
 vimeo_id: "1221323988"   # troque pelo ID real do vídeo no Vimeo
 capa: "/assets/img/capa-mesa.png"
 destaque: true
