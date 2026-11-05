@@ -172,20 +172,11 @@ document.addEventListener("DOMContentLoaded", function () {
     botoesCategoria.forEach(function (botao) {
       botao.classList.toggle("active", botao.dataset.filter === categoriaAtiva);
     });
-
     botoesTag.forEach(function (botao) {
       if (tagsAtivas.has(botao.dataset.tag)) {
         botao.classList.add("active");
       }
     });
-
-    // se veio filtro de tag, já abre o painel de tags visível,
-    // pra ficar claro pro visitante o que está sendo filtrado
-    if (tagsDaURL && painelTags && toggleFiltros) {
-      painelTags.classList.add("aberto");
-      toggleFiltros.classList.add("active");
-    }
-
     aplicarFiltro();
   }
 

@@ -1,6 +1,6 @@
 ---
 title: "Recital Decolonial - A morte de Anhanguera"
-slug: "nuvens"
+slug: "recital-1"
 ano: 2026
 categoria: "Animação"
 tags: ["vetorial", "mestrado", "after effects", "piano", "autoral", "2d", "autoral - Arte", "vj", "crítica"]
